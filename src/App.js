@@ -1,25 +1,54 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import RingLoader from "react-spinners/ClipLoader";
+import Header from './components/Header';
+import SideTop from './components/SideTop';
+import Sidebar from './components/SideBar';
+import SideBottom from './components/SideBottom';
+import Main from './components/Main';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+          const [loading, setLoading] = useState(false);
+
+          useEffect(() => {
+                    setLoading(true)
+                    setTimeout(() => {
+                              setLoading(false)
+                    }, 1000)
+          }, [])
+
+
+          return (
+                    <div className="App">
+                              {
+                                        loading ?
+
+                                                  <RingLoader
+                                                            size={100}
+                                                            color={"#f7ba15"}
+                                                            loading={loading}
+                                                            speedMultiplier={1}
+                                                  />
+                                                  :
+
+                                                  <div className='main'>
+                                                            <Header />
+                                                            <div className='section'>
+                                                                      <SideTop />
+                                                            </div>
+                                                            <div className='container container__fluido'>
+                                                                      <Main />
+                                                                      <div className='section__main container__fluido'>
+                                                                                <Sidebar />
+                                                                                <SideBottom />
+                                                                      </div>
+                                                            </div>
+
+                                                  </div>
+                              }
+                    </div>
+          );
 }
 
 export default App;

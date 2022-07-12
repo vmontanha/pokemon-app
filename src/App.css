@@ -1,38 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap');
+
 .App {
-  text-align: center;
+          height: 100vh;
+          background-color: #ffff;
+          width: 100vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main {
+          height: 100vh;
+          background-color: transparent;
+          width: 100%;
+          position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container__fluido {
+          width: 60%;
+          margin-left: auto;
+          margin-right: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header {
+          background-color: red;
+          position: fixed;
+          width: 100%;
+          top: 0;
+          height: 70px;
 }
 
-.App-link {
-  color: #61dafb;
+.section {
+          display: block;
+          position: relative;
+          top: 15vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.box {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+}
+
+.order__search {
+          display: flex;
+          align-items: center;
+}
+
+.search {
+          width: 50%;
+          position: relative;
+          display: block;
+}
+
+.search__bar {
+          width: 100%;
+          border-radius: 30px;
+          border: 0px;
+          background-color: rgba(128, 128, 128, 0.1);
+          height: 3rem;
+          color: grey;
+          font-size: 1rem;
+}
+
+.search__bar::placeholder {
+          padding-left: 30px;
+}
+
+.icon {
+          position: absolute;
+          right: 30px;
+          top: 50%;
+          transform: translate(0, -50%);
+          color: red;
+          font-size: 1rem;
+}
+
+
+.navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+}
+
+.logo {
+          position: relative;
+          top: 0;
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          align-items: center;
+          height: 70px;
+
+}
+
+.logo img {
+          width: 40px;
+          opacity: 1;
+          position: relative;
+}
+
+.logo h1 {
+          position: relative;
+          left: 20px;
+          font-weight: 700;
+          color: #ffff;
+          font-size: 1.3rem;
+}
+
+.user {
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          align-items: center;
+          height: 70px;
+}
+
+.user img {
+          width: 30px;
+          opacity: 1;
+          position: relative;
+}
+
+.user .offline {
+          font-size: 1rem;
+          opacity: 1;
+          color: #ffff;
+          margin-left: 20px;
+}
+
+.order__search h1 {
+          font-size: 0.8rem;
+          color: rgba(128, 128, 128, 1);
+          font-weight: 400;
+          margin-right: 30px;
+}
+
+.btn__order {
+          height: 2.5rem;
+          border-radius: 30px;
+          border: 1px red solid;
+          color: red;
+          background-color: transparent;
+          padding-right: 2rem;
+          padding-left: 2rem;
+          text-align: left;
+          font-size: 0.8rem;
+}
+
+.section__main {
+          position: relative;
+          display: block;
+          width: 20%;
+}
+
+.sidebar {
+          background-color: transparent;
+          height: 50vh;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          margin-bottom: 100px;
+}
+
+.sidebar__fav {
+          display: block;
+          position: relative;
+}
+
+.sidebar h1 {
+          font-size: 1rem;
+          color: black;
+          font-weight: 400;
+}
+
+.sidebar__fav h1 {
+          font-size: 1rem;
+          color: black;
+          font-weight: 400;
+}
+
+.box__types {
+          display: flex;
+          flex-wrap: wrap;
+          margin-right: auto;
+          position: relative;
+          left: 0;
+}
+
+.btn__types {
+          border-radius: 20px;
+          color: red;
+          border: 1px solid red;
+          background-color: transparent;
+          padding: 8px 20px 8px;
+          margin: 4px;
+          margin-left: 0 !important;
+}
+
+.container__main {
+          display: flex;
+          position: relative;
+          width: 100%;
+          justify-content: center;
+          align-items: flex-start;
+          flex-wrap: wrap;
+          height: 70vh;
+          background-color: transparent;
+          overflow: scroll;
+          overflow-x: hidden;
+}
+
+.container {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: row-reverse;
+          position: relative;
+          top: 20vh;
+}
+
+.box__pokemon {
+          width: 20%;
+          position: relative;
+          margin: 0 0px 70px 0px;
+}
+
+.pokemon {
+          width: 50%;
+          position: relative;
+          padding: 10px 10px 10px;
+          background-color: rgba(128, 128, 128, 0.2);
+          border-radius: 10px;
+}
+
+.pokemon img {
+          width: 100%;
+}
+
+.number {
+          font-size: 10px;
+          color: grey;
+          margin-bottom: -10px;
+}
+
+.pokemon__skils h1 {
+          font-size: 18px;
+          font-weight: bold;
+          color: #000;
+}
+
+.pokemon__hits {
+          display: flex;
+          align-content: center;
+          justify-content: flex-start;
+          position: relative;
+}
+
+.grass,
+.poison {
+          text-align: left;
+          margin-right: 10px;
+          padding: 5px 10px 5px;
+          margin-top: 0px;
+          border-radius: 5px;
+          font-size: 12px;
+
+}
+
+.grass {
+          background-color: aqua;
+          color: #000;
+          font-weight: 700;
+}
+
+.poison {
+          background-color: #b000e3;
+          color: #fff;
+          font-weight: 700;
 }
