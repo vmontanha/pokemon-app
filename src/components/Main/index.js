@@ -9,7 +9,7 @@ function Main() {
                     baseURL: "https://unpkg.com/pokemons@1.1.0",
           });
 
-          const [poke, setPoke] = useState([{}]);
+          const [poke, setPoke] = useState([]);
 
           useEffect(() => {
                     api
@@ -22,32 +22,36 @@ function Main() {
 
           }, []);
 
-          console.log(poke.results)
-
-
           return (
                     <div className='container__main'>
-                              {
-                                        poke.map(element => {
+                              {poke.results &&
+                                        Object.values(poke.results).map((value) => (
                                                   <div className='box__pokemon' >
                                                             <div className='pokemon'>
-                                                                      <img src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png' alt='' />
+                                                                      <img src={value.sprites.normal} alt='' />
                                                             </div>
                                                             <div className='pokemon__skils'>
                                                                       <p className='number'>
-
+                                                                                Nº{value.national_number}
                                                                       </p>
-                                                                      <h1>Bulbasaru</h1>
+
+                                                                      <h1>{value.name}</h1>
                                                             </div>
                                                             <div className='pokemon__hits'>
-                                                                      <span className='grass'>Grass</span>
-                                                                      <span className='poison'>Poison</span>
+                                                                      <span className='grass'>
+                                                                                {value.type[0]}
+                                                                      </span>
+                                                                      {
+                                                                                value.type[1] ? <span className='poison'>
+                                                                                          {value.type[1]}
+                                                                                </span>
+                                                                                          : null
+                                                                      }
+
                                                             </div>
                                                   </div>
-                                        })
-
+                                        ))
                               }
-
                     </div >
           );
 }
