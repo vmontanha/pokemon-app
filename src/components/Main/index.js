@@ -1,13 +1,9 @@
 import '../../App.css';
 import React, { useEffect, useState } from 'react';
 // import api from '../../service';
-import axios from 'axios';
+import api from '../../service';
 
 function Main() {
-
-          const api = axios.create({
-                    baseURL: "https://unpkg.com/pokemons@1.1.0",
-          });
 
           const [poke, setPoke] = useState([]);
 

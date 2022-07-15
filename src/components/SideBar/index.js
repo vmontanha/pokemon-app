@@ -1,14 +1,9 @@
 import '../../App.css';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../../service';
 
 
 function SideBar() {
-
-          const api = axios.create({
-                    baseURL: "https://unpkg.com/pokemons@1.1.0",
-          });
-
 
           const [filter, setFilter] = useState([]);
 
@@ -22,6 +17,8 @@ function SideBar() {
 
 
           }, []);
+
+          // console.log(filter.results)
 
           return (
                     <div className='sidebar'>
